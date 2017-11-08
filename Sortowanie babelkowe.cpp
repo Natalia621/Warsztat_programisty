@@ -3,15 +3,21 @@
 using namespace std;
 int main()
 {
-	int i, j, t;
-	int a[50];
-	for(i=0; i<49; i++){
-		for(j=0; j<49; j++){
+	int a[8]={3,2,5,7,6,1,4,8};
+	
+	bool p=true;
+	for(int i=0; i<7; i++){
+		p=true;
+		for(int j=0; j<7; j++){
 			if(a[j]>a[j+1]){
-				t=a[j];
-				a[j]=a[j+1];
-				a[j+1]=t;
+				swap(a[i],a[i+1]);
+				p=false;
 			}
 		}
-	}	
+		
+		if(true==p){
+			break;
+		}
+	}
 }
+
